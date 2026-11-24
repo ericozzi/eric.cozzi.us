@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <script src="{{ "js/carousel.js" | relURL }}" defer></script>
+</head>
+<body>
+  {{ $d := .Site.Data.portfolio }}
+
+  <div class="layout-shell">
+    <!-- Persistent Left Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <a href="#top">{{ $d.hero.name }}</a>
+        <span class="sidebar-role">Principal Systems Engineer</span>
+      </div>
+      <nav aria-label="Primary Navigation">
+        <ul>
+          <li><a href="#top">Overview</a></li>
+          <li><a href="#accomplishments">Accomplishments</a></li>
+          <li><a href="#skills">Core Skills</a></li>
+          <li><a href="#experience">Professional Journey</a></li>
+          <li><a href="#patents">Patents &amp; Speaking</a></li>
+          <li><a href="#education">Education &amp; Leadership</a></li>
+          <li><a href="#interests">Interests</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="mailto:{{ $d.hero.email }}">{{ $d.hero.email }}</a>
+      </div>
+    </aside>
+
+    <!-- Main Content Column -->
+    <main class="main-content" id="top">
+      <!-- Hero Banner -->
+      <header class="hero">
+        <div class="hero-inner">
+          <div class="hero-grid">
+            <img src="{{ strings.TrimPrefix "/" $d.hero.headshot | relURL }}" alt="{{ $d.hero.name }}" class="headshot" width="444" height="666">
+            <div class="hero-text">
+              <h1>{{ $d.hero.name }}</h1>
+              <p class="hero-title">{{ $d.hero.title }}{{ with $d.hero.specialty }}<br>{{ . }}{{ end }}</p>
+              <p class="hero-subtitle">{{ $d.hero.subtitle }}</p>
+              <p class="hero-meta">{{ $d.hero.meta }}</p>
+            </div>
+          </div>
+
+          <div class="cta-bar">
+            {{ range $d.hero.ctas }}
+              <a href="{{ .url }}" class="btn {{ if .primary }}btn-primary{{ else }}btn-secondary{{ end }}" {{ if not (hasPrefix .url "#") }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                {{ .label }}
+              </a>
+            {{ end }}
+          </div>
+        </div>
+      </header>
+
+      <!-- Executive Summary -->
+      <section class="section summary-section">
+        <div class="container">
+          <p class="lead-summary">{{ $d.hero.summary }}</p>
+        </div>
+      </section>
+
+      <!-- Featured Accomplishments -->
+      <section class="section" id="accomplishments">
+        <div class="container">
+          <h2 class="section-heading" id="accomplishments-heading">Featured Accomplishments</h2>
+          <div class="accomplishments-carousel" role="region" aria-roledescription="carousel" aria-labelledby="accomplishments-heading">
+            <div class="carousel-track" id="accomplishments-track" tabindex="0" aria-label="Accomplishment cards">
+              {{ range $index, $item := $d.accomplishments }}
+                <article class="card highlight-card" role="group" aria-roledescription="slide" aria-label="{{ add $index 1 }} of {{ len $d.accomplishments }}">
+                  {{ if .thumbnail }}
+                    {{ if .video_url }}
+                      <a class="highlight-card-media" href="{{ .video_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .video_label }}">
+                        <img src="{{ strings.TrimPrefix "/" .thumbnail | relURL }}" alt="{{ .thumbnail_alt }}" loading="lazy">
+                        <span class="video-play" aria-hidden="true">&#9654;</span>
+                      </a>
+                    {{ else }}
+                      <div class="highlight-card-media">
+                        <img src="{{ strings.TrimPrefix "/" .thumbnail | relURL }}" alt="{{ .thumbnail_alt }}" loading="lazy">
+                      </div>
+                    {{ end }}
+                  {{ end }}
+                  <div class="highlight-card-content">
+                    <span class="badge">{{ .tag }}</span>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                    {{ if .link_url }}
+                      <a href="{{ .link_url }}" class="card-link" {{ if not (hasPrefix .link_url "#") }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                        {{ .link_label }} &rarr;
+                      </a>
+                    {{ end }}
+                  </div>
+                </article>
+              {{ end }}
+            </div>
+            <div class="carousel-controls" hidden>
+              <button type="button" class="carousel-prev" aria-controls="accomplishments-track" aria-label="Previous accomplishment" title="Previous accomplishment">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <span class="carousel-position"></span>
+              <button type="button" class="carousel-next" aria-controls="accomplishments-track" aria-label="Next accomplishment" title="Next accomplishment">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-toggle" aria-label="Pause rotation" title="Pause rotation">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Skills -->
+      <section class="section section-alt" id="skills">
+        <div class="container">
+          <h2 class="section-heading">Core Technical Skills</h2>
+          <div class="skills-grid">
+            {{ range $d.skills }}
+              <div class="skill-group">
+                <h3>{{ .category }}</h3>
+                <div class="pill-list">
+                  {{ range .items }}
+                    <span class="pill">{{ . }}</span>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+
+      <!-- Professional Journey -->
+      <section class="section" id="experience">
+        <div class="container">
+          <h2 class="section-heading">Professional Journey</h2>
+          <div class="timeline">
+            {{ range $d.experience }}
+              <article class="role-block">
+                <div class="role-header">
+                  <div class="role-company">
+                    {{ with .logo }}
+                      <img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="" class="company-logo" loading="lazy">
+                    {{ end }}
+                    <div>
+                      <h3>{{ .company }}</h3>
+                      <p class="role-title">{{ .role }}</p>
+                    </div>
+                  </div>
+                  <div class="role-meta">
+                    <span class="period">{{ .period }}</span>
+                    <span class="location">{{ .location }}</span>
+                  </div>
+                </div>
+                <p class="role-overview">{{ .overview }}</p>
+
+                {{ if .details_summary }}
+                  <details class="expandable-details">
+                    <summary aria-label="More details about {{ .company }}">More details</summary>
+                    <p>{{ .details_summary }}</p>
+                    {{ with .bullets }}
+                      <ul class="bullet-list">
+                        {{ range . }}
+                          <li><strong>{{ .label }}:</strong> {{ .text }}</li>
+                        {{ end }}
+                      </ul>
+                    {{ end }}
+                  </details>
+                {{ end }}
+
+                {{ with .initiatives }}
+                  <div class="initiatives-stack">
+                    {{ range . }}
+                      <div class="initiative-card">
+                        <h4>{{ .title }}</h4>
+                        <p class="initiative-summary">{{ .summary }}</p>
+                        {{ if .bullets }}
+                          <details class="expandable-details">
+                            <summary aria-label="More details about {{ .title }}">More details</summary>
+                            <ul class="bullet-list">
+                              {{ range .bullets }}
+                                <li><strong>{{ .label }}:</strong> {{ .text }}</li>
+                              {{ end }}
+                            </ul>
+                          </details>
+                        {{ end }}
+                      </div>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </article>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+
+      <!-- Patents, Publications & Speaking (Promoted above Education) -->
+      <section class="section section-alt" id="patents">
+        <div class="container">
+          <h2 class="section-heading">Patents, Publications &amp; Speaking</h2>
+
+          <h3 class="subsection-heading">Technical Tutorials &amp; Conference Proceedings</h3>
+          <div class="stack-list">
+            {{ range $d.speaking }}
+              <div class="card compact-card">
+                <div class="compact-header">
+                  <h4>{{ .title }}</h4>
+                  <span class="meta-tag">{{ .date_location }}</span>
+                </div>
+                <p class="venue">{{ .venue }}</p>
+                <div class="inline-links">
+                  {{ range .links }}
+                    <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .label }} &rarr;</a>
+                  {{ end }}
+                </div>
+              </div>
+            {{ end }}
+          </div>
+
+          <h3 class="subsection-heading">Granted U.S. Patents</h3>
+          <div class="grid-2x2">
+            {{ range $d.patents }}
+              <div class="card compact-card">
+                <span class="patent-num">{{ .number }}</span>
+                <h4><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a></h4>
+                <p class="meta-tag">{{ .assignee }} • {{ .date }}</p>
+                {{ if .description }}
+                  <details class="expandable-details">
+                    <summary aria-label="More details about {{ .title }}">More details</summary>
+                    <p>{{ .description }}</p>
+                  </details>
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Community Leadership -->
+      <section class="section" id="education">
+        <div class="container">
+          <h2 class="section-heading">Education &amp; Community Leadership</h2>
+          <div class="grid-2x2">
+            <div>
+              <h3 class="subsection-heading">Education &amp; Certifications</h3>
+              <div class="stack-list">
+                {{ range $d.education }}
+                  <div class="card compact-card">
+                    <h4>{{ .credential }}</h4>
+                    <p class="venue">{{ .institution }}</p>
+                    <p class="meta-tag">
+                      {{ .meta }}
+                      {{ if .link_url }} • <a href="{{ if hasPrefix .link_url "/" }}{{ strings.TrimPrefix "/" .link_url | relURL }}{{ else }}{{ .link_url }}{{ end }}" target="_blank" rel="noopener noreferrer">{{ .link_label }}</a>{{ end }}
+                    </p>
+                    {{ if .description }}
+                      <details class="expandable-details">
+                        <summary aria-label="More details about {{ .credential }}">More details</summary>
+                        <p>{{ .description }}</p>
+                      </details>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+
+            <div>
+              <h3 class="subsection-heading">Youth &amp; Community Leadership</h3>
+              <div class="stack-list">
+                {{ range $d.leadership }}
+                  <div class="card compact-card">
+                    <h4>{{ .role }}</h4>
+                    <p class="venue">{{ .org }}</p>
+                    <p class="meta-tag">{{ .details }}</p>
+                    {{ if .description }}
+                      <details class="expandable-details">
+                        <summary aria-label="More details about {{ .role }}">More details</summary>
+                        <p>{{ .description }}</p>
+                      </details>
+                    {{ end }}
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interests -->
+      <section class="section section-alt" id="interests">
+        <div class="container">
+          <h2 class="section-heading">Interests &amp; Pursuits</h2>
+          <div class="grid-2x2">
+            {{ range $d.interests }}
+              <div class="card compact-card">
+                <h4>{{ .label }}</h4>
+                <p>{{ .text }}</p>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+
+      <!-- Clean Footer -->
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p><strong>{{ $d.hero.name }}</strong> • Principal Systems Software Engineer • Twin Cities, MN</p>
+          <div class="footer-links">
+            <a href="mailto:{{ $d.hero.email }}">{{ $d.hero.email }}</a>
+            {{ range $d.hero.ctas }}
+              <a href="{{ .url }}" {{ if not (hasPrefix .url "#") }}target="_blank" rel="noopener noreferrer"{{ end }}>{{ .label }}</a>
+            {{ end }}
+          </div>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

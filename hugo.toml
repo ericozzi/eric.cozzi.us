@@ -1,0 +1,7 @@
+baseURL = "https://eric.cozzi.us/"
+languageCode = "en-us"
+title = "Eric Cozzi | Principal Systems Software Engineer"
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[params]
+  description = "Principal Systems Software Engineer specializing in Exascale HPC, Distributed Runtimes (DragonHPC), Kubernetes, and Cloud Infrastructure."

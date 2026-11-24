@@ -1,0 +1,321 @@
+hero:
+  name: "Eric Cozzi"
+  title: "Principal Systems Software Engineer"
+  specialty: "Exascale HPC & High-Availability Distributed Systems"
+  subtitle: "Architecting large-scale Linux, Kubernetes, and Cloud Infrastructure"
+  meta: "Twin Cities, MN • 30+ Years Building Mission-Critical Commercial Systems"
+  headshot: "/images/headshot-optimized.jpg"
+  email: "eric@cozzi.us"
+  ctas:
+    - label: "Resume (PDF)"
+      url: "https://docs.google.com/gview?embedded=1&url=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F15cabdRKt6mLJLg0adS2R0LsfJUezAWf_gx9mtVQ3-8o%2Fexport%3Fformat%3Dpdf"
+      primary: true
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/in/ericcozzi" 
+      primary: false
+    - label: "GitHub (Personal)"
+      url: "https://github.com/ericozzi"
+      primary: false
+    - label: "GitHub (DragonHPC)"
+      url: "https://github.com/DragonHPC"
+      primary: false
+  summary: >
+    Principal Systems Software Engineer and Technical Lead with over 30 years of experience
+    architecting, prototyping, and delivering mission-critical commercial software—from pre-IPO
+    startups through an IPO to Fortune 100 industry leaders. Currently at Hewlett Packard
+    Enterprise, I serve as a core developer on the open-source DragonHPC distributed runtime
+    and previously as architect and lead developer for the Kubernetes-hosted HPE Cray EX Image
+    Management System (IMS) powering leadership-class exascale supercomputers. Holder of 4
+    granted U.S. patents and a certified Professional Scrum Master, I specialize in taking complex
+    distributed systems, cloud-native infrastructure, and real-time communications platforms
+    from initial requirements to production scale.
+
+accomplishments:
+  - tag: "Open-Source Distributed Runtime"
+    title: "DragonHPC & Hybrid AI/HPC Workflows"
+    thumbnail: "/images/accomplishments/dragonhpc-webinar.jpg"
+    video_url: "https://www.youtube.com/watch?v=pTZXZHB0qOM"
+    video_label: "Watch the DragonHPC ARCHER2 webinar"
+    description: >
+      Core systems developer for HPE's open-source DragonHPC runtime—featured in the ARCHER2
+      webinar showcasing hybrid HPC/AI workflows with RHAPSODY and radex across heterogeneous clusters.
+  - tag: "Leadership-Class Supercomputing"
+    title: "HPE Cray EX Image Management System (IMS)"
+    thumbnail: "/images/accomplishments/exascale-computing.jpg"
+    video_url: "https://www.youtube.com/watch?v=etVzy1z_Ptg"
+    video_label: "Watch the Exascale Computing video"
+    description: >
+      Architected and led the cloud-native, Kubernetes-hosted image build and provisioning microservice
+      powering exascale-class HPE Cray EX supercomputers across x86_64 and aarch64 architectures.
+  - tag: "Intellectual Property"
+    title: "4 Granted U.S. Patents"
+    thumbnail: "/images/accomplishments/telephony-patent-figure.png"
+    thumbnail_alt: "Figure from U.S. Patent 9,357,025 depicting a virtual office telephony interface"
+    description: >
+      Named inventor on four granted U.S. patents spanning real-time VoIP/RF emergency dispatch
+      interoperability, spatial telephony, and state-dependent communications streams (2013–2025).
+    link_label: "Jump to Patents"
+    link_url: "#patents"
+  - tag: "Real-Time Emergency Communications"
+    title: "Cisco IPICS Emergency Dispatch"
+    thumbnail: "https://img.youtube.com/vi/V8cKJRbD5uc/hqdefault.jpg"
+    video_url: "https://www.youtube.com/watch?v=V8cKJRbD5uc"
+    video_label: "Watch the Cisco IPICS video"
+    description: >
+      Founding engineer and technical lead for Cisco IPICS, including the Emergency Dispatch client
+      that connected IP/VoIP endpoints with RF radio systems for mission-critical push-to-talk
+      communications. This work resulted in two granted U.S. patents.
+    link_label: "View Cisco Patents"
+    link_url: "#patents"
+  - tag: "SaaS Collaboration & Spatial Telephony"
+    title: "SoCoCo Team Space"
+    thumbnail: "https://img.youtube.com/vi/529v6oV3JtM/hqdefault.jpg"
+    video_url: "https://www.youtube.com/watch?v=529v6oV3JtM"
+    video_label: "Watch the Sococo teleconferencing video"
+    description: >
+      Built real-time VoIP and spatial telephony for virtual offices, including a production PSTN
+      gateway enabling more than 25,000 users to place and bridge calls in conference rooms.
+      The work resulted in two granted U.S. patents.
+    link_label: "View SoCoCo Patents"
+    link_url: "#patents"
+
+skills:
+  - category: "Languages"
+    items: ["Python", "C", "C++", "Bash"]
+  - category: "Cloud & Orchestration"
+    items: ["Kubernetes", "Docker", "Podman", "OpenStack", "RESTful Microservices"]
+  - category: "HPC, Systems & Networking"
+    items: ["Exascale HPC", "Linux (RHEL, SLES, CentOS)", "UNIX", "Distributed Runtimes", "VoIP / SIP", "TCP/UDP/Multicast"]
+  - category: "Architecture & Practices"
+    items: ["Distributed Systems Architecture", "QEMU Virtualization", "Automated Testing", "Agile / Scrum (PSM I)"]
+
+experience:
+  - company: "Hewlett Packard Enterprise (formerly Cray, Inc.)"
+    logo: "/images/logos/hpe.png"
+    role: "Principal Systems / Software Engineer"
+    period: "2014 – Present"
+    location: "Twin Cities, MN"
+    overview: >
+      Principal systems engineer architecting and developing distributed runtime and cloud-native
+      provisioning infrastructure for leadership-class exascale supercomputers, spanning DragonHPC
+      and the HPE Cray EX Image Management System (IMS) through HPE's 2019 acquisition of Cray.
+    initiatives:
+      - title: "Core Developer of HPE Dragon Distributed Runtime (DragonHPC)"
+        summary: "Core systems developer for DragonHPC, HPE's open-source distributed runtime powering post-exascale HPC and AI workloads across heterogeneous clusters."
+        bullets:
+          - label: "Dragon Launcher Re-Architecture"
+            text: "Re-architected the multi-node Dragon launcher to streamline runtime bootstrap, control-plane initialization, and graceful teardown across HPC workload managers (Slurm, PBS/PALS), SSH, and Kubernetes environments—improving startup reliability and resilience at cluster scale."
+          - label: "dragon-run Library Development"
+            text: "Designed and developed the dragon-run library, giving users and distributed workflows a clean programmatic and CLI interface to launch, manage, and coordinate multi-node executables and parallel tasks across cluster allocations."
+          - label: "Global Services (GS) & Local Services (LS) Engineering"
+            text: "Implemented and optimized core features across Dragon's distributed control plane—spanning cluster-wide resource orchestration and state management in Global Services (GS) and node-level process spawning, monitoring, and I/O routing in Local Services (LS)."
+          - label: "End-to-End Runtime Integration & Open-Source Delivery"
+            text: "Contributed across nearly every layer of the open-source DragonHPC Python runtime stack—extending standard multiprocessing capabilities, hardening cross-node fault handling, and tuning multi-node execution performance from developer laptops to exascale systems."
+      - title: "Architect and Lead Developer of HPE Cray EX Image Management System (IMS)"
+        summary: "Architect and lead developer for the HPE Cray EX Image Management System (IMS), a cloud-native microservice that re-imagined legacy Cray image tooling for exascale-class supercomputers."
+        bullets:
+          - label: "Cloud-Native Architecture & Modernization"
+            text: "Re-architected legacy monolithic image management tools into a resilient, Kubernetes-hosted microservice deployed within the HPE Cray EX management cluster."
+          - label: "RESTful CRUD API & Lifecycle Management"
+            text: "Designed and implemented a RESTful CRUD API governing the full lifecycle of bootable node images, image recipes, SSH public keys, and asynchronous build/customization jobs."
+          - label: "Containerized Image Build & Customization Workflows"
+            text: "Engineered Kubernetes-orchestrated IMS Jobs to automate building bootable node images from recipes and to provision secure, SSH-accessible environments for interactive or automated customization of existing images."
+          - label: "Exascale & Multi-Architecture Production Delivery"
+            text: "Delivered core image-provisioning infrastructure powering leadership-class HPE Cray EX systems, supporting multi-architecture (x86_64 and aarch64/ARM) compute and service node workflows."
+      - title: "Architect and Lead Developer of Cray XC-50 Image Management Tools"
+        summary: "Led cross-platform image build architecture and system administration tooling for Cray XC-50 supercomputers."
+        bullets:
+          - label: "Cross-Platform ARM Image Architecture"
+            text: "Architected and led the implementation of QEMU hardware-virtualized build pipelines, enabling x86_64 management nodes to build and customize aarch64 (ARM) compute node images."
+          - label: "Cross-Project Tiger Team Leadership"
+            text: "Coordinated across engineering, QA, and release organizations within a cross-project tiger team to validate multi-architecture testing and deliver ARM-based support on schedule."
+          - label: "RPM Repository & Recipe Management Tooling"
+            text: "Engineered Cray administration utilities to manage local RPM repositories and image recipes used to assemble production compute node images."
+          - label: "2018 Cray Users Group (CUG) Presenter"
+            text: "Authored and delivered a technical presentation at CUG 2018 in Stockholm, Sweden, detailing the QEMU-based cross-platform ARM image build architecture."
+      - title: "Core Developer of OpenStack-Based Cray Management System"
+        summary: "Core engineer on Cray's high-visibility initiative to modernize supercomputer administration using the cloud-native OpenStack platform. Contributed to the development, build, packaging, installation, configuration, and triage of the OpenStack-based Cray management system."
+      - title: "Co-Architect and Developer of OpenStack-Managed Cray External Login Node"
+        summary: "Co-architected and developed the redesigned Cray External Login (ELogin) node, utilizing OpenStack Ironic for automated bare-metal provisioning on Cray XC supercomputers. Decoupled user login sessions, Cray programming and compilation environments, and Workload Management (WLM) job submission onto dedicated external nodes—improving system security, scalability, and isolation from internal supercomputer resources."
+
+  - company: "Cray, Inc."
+    logo: "/images/logos/cray.png"
+    role: "Contractor"
+    period: "2012 – 2014"
+    location: "Twin Cities, MN"
+    overview: >
+      Joined Cray's systems software engineering organization as a contractor, developing foundational
+      OpenStack-based supercomputer management and bare-metal provisioning infrastructure before
+      transitioning into a full-time engineering role.
+    details_summary: "Engineered a Python-based automated testing framework to validate Cray XC supercomputer software installations in virtualized environments."
+    bullets:
+      - label: "End-to-End Installation Automation"
+        text: "Built a Python test harness automating the installation and verification of Cray XC System Management Workstation (SMW) and Cray Linux Environment (CLE) releases inside VirtualBox."
+      - label: "Hardware Bottleneck Reduction"
+        text: "Enabled developers and QA engineers to run repeatable installation tests locally without reserving scarce, expensive physical Cray supercomputer hardware."
+      - label: "Release Quality & Velocity"
+        text: "Caught installation regressions earlier in the release cycle, improving software reliability and accelerating validation across versioned SMW/CLE builds."
+
+  - company: "SoCoCo: Social Communications Company"
+    logo: "/images/logos/sococo.png"
+    role: "Senior Software / Network Infrastructure Engineer"
+    period: "2010 – 2012"
+    location: "Mountain View, CA & Twin Cities, MN"
+    overview: >
+      Architected and developed real-time VoIP and spatial telephony services enabling distributed
+      teams to place and bridge phone calls directly within virtual offices and conference rooms—work
+      that yielded two granted U.S. patents in visual and virtual-area communications.
+    details_summary: "Core systems and platform engineer for Sococo Team Space, a real-time SaaS virtual office platform enabling distributed teams to collaborate via spatial audio, video, screen sharing, and patented VoIP telephony."
+    bullets:
+      - label: "PSTN VoIP Gateway Architecture & Operations"
+        text: "Architected, developed, and operationally managed Sococo's production PSTN VoIP Gateway—a real-time, multi-threaded C/C++ Linux daemon enabling 25,000+ users to initiate and bridge live telephone calls directly inside virtual offices and conference rooms."
+      - label: "Cross-Platform Client Engine"
+        text: "Engineered core components of Sococo's cross-platform abstraction layer (Windows, Linux, macOS, and iOS) and real-time collaboration engine as part of a 6-person Agile Client Platform Team."
+      - label: "Patented Telephony Innovation"
+        text: "Co-invented the core spatial-telephony integration architecture granted under U.S. Patent 9,357,025 (Virtual Area Based Telephony Communications, Granted May 31, 2016) and continuation U.S. Patent 12,473,234 (Visual Communications, Granted November 18, 2025)."
+
+  - company: "Cisco Systems, Inc."
+    logo: "/images/logos/cisco.png"
+    role: "Senior Software Engineer IV"
+    period: "2005 – 2010"
+    location: "San Jose, CA"
+    overview: >
+      Served as lead developer on the Cisco IPICS Emergency Dispatch client, engineering
+      mission-critical communications software that bridged disparate RF radio systems over shared
+      VoIP networks and resulted in two granted U.S. patents.
+    details_summary: "Senior systems engineer in Cisco's elite Emerging Technologies Group (ETG), incubating next-generation, $1B+ commercial product initiatives from initial concept through enterprise deployment."
+    bullets:
+      - label: "Cisco IPICS Architecture & Technical Leadership"
+        text: "Founding Senior Engineer from product inception and Technical Lead for versions 3.0 and 4.0 of Cisco IPICS (IP Interoperability and Collaboration System), enabling real-time communication interoperability and incident response across disparate IP/VoIP and RF radio networks."
+      - label: "Emergency Dispatch Client & Real-Time Media"
+        text: "Lead developer for the Cisco IPICS Emergency Dispatch client, engineering mission-critical push-to-talk (PTT), multi-channel audio routing, and command-and-control workflows for public safety and defense operations."
+      - label: "Patented Communications Innovation"
+        text: "Invented state-driven session routing and multi-party stream access control architectures resulting in U.S. Patent 8,547,856 (Communication System with State Dependent Parameters, Granted October 1, 2013) and U.S. Patent 8,589,678 (Managing Status and Access for a Variable Source Content Stream, Granted November 19, 2013)."
+
+  - company: "Level(3) Communications (formerly Telverse Communications)"
+    logo: "/images/logos/level3.png"
+    role: "Senior Software Engineer"
+    period: "2001 – 2005"
+    location: "Sunnyvale, CA"
+    overview: >
+      Engineered carrier-grade VoIP and hosted IP telephony infrastructure, building scalable
+      real-time voice signaling, call-routing, and network services from early startup architecture
+      through Telverse's acquisition by Level(3) Communications.
+    details_summary: "Senior systems engineer building carrier-grade wholesale and retail VoIP, voice-signaling, and call-routing infrastructure from early startup architecture through Telverse's acquisition by Level(3) Communications."
+    bullets:
+      - label: "Customer Provisioning & Systems Integration"
+        text: "Developed and maintained a C/C++ internal customer provisioning platform backed by a unified MySQL database—automating end-to-end subscriber activation and data synchronization across billing, dial tone, voicemail, and core telephony subsystems."
+
+  - company: "SurfControl Software (formerly SurfWatch Software)"
+    logo: "/images/logos/surfcontrol.png"
+    role: "Senior Software Engineer"
+    period: "1997 – 2001"
+    location: "Sunnyvale, CA"
+    overview: >
+      Developed commercial network-filtering and web-security software, building high-throughput
+      traffic inspection and policy-enforcement components across SurfWatch's growth and acquisition
+      by SurfControl.
+    details_summary: "Senior systems engineer developing core enterprise web-filtering and network content-control software, building high-throughput traffic inspection and policy-enforcement systems across SurfWatch's growth and acquisition by SurfControl."
+    bullets:
+      - label: "Core SurfWatch Filtering SDK"
+        text: "Primary developer of the cross-platform, multi-threaded C/C++ SurfWatch SDK—the core URL-classification engine translating real-time web requests into allow/block decisions across all server, enterprise-proxy, and corporate firewall products."
+      - label: "Mission-Critical Subscription Infrastructure"
+        text: "Led the redesign of the high-traffic backend customer subscription and entitlement system, enforcing licensing policies while reliably delivering real-time filter updates to global endpoints."
+      - label: "Windows Network Stack Integration"
+        text: "Engineered SurfWatch for Windows 98, integrating low-level traffic filtering directly into the OS networking stack via the Winsock 2.0 Service Provider Interface (SPI)."
+
+  - company: "Mustang Software Inc."
+    logo: "/images/logos/mustang.png"
+    role: "Software Engineer"
+    period: "1994 – 1997"
+    location: "Bakersfield, CA"
+    overview: >
+      Engineered multi-user online communications and messaging server software for Mustang's
+      commercial Wildcat! bulletin board system (BBS).
+    details_summary: "Software engineer and project lead developing client-server communications software and developer tools for Mustang Software, creators of the flagship Wildcat! online bulletin board and messaging platform."
+    bullets:
+      - label: "Wildcat! Navigator Graphical Client"
+        text: "Project lead and primary developer of Wildcat! Navigator, re-architecting Wildcat!'s legacy text-based ASCII/ANSI interface into a modern graphical client-server experience for online messaging, file transfers, and interactive services."
+      - label: "Wildcat! Navigator SDK"
+        text: "Designed, implemented, and documented the Wildcat! Navigator Software Development Kit (SDK), enabling third-party developers to build custom graphical extensions and integrations on top of the platform."
+
+speaking:
+  - title: "AI+HPC Workflows and DragonHPC — Full-Day Technical Tutorial"
+    venue: "PEARC26 (Practice and Experience in Advanced Research Computing)"
+    date_location: "July 2026 • Minneapolis, MN"
+    links:
+      - label: "Tutorial Materials"
+        url: "https://github.com/DragonHPC/pearc_2026_tutorial"
+  - title: "Reimagining Image Management in the New Shasta Environment"
+    venue: "Cray Users Group (CUG 2019) Proceedings & Technical Presentation"
+    date_location: "May 2019 • Montreal, Canada"
+    links:
+      - label: "Tutorial Slides"
+        url: "https://cug.org/proceedings/cug2019_proceedings/includes/files/pres114s1.pdf"
+  - title: "Managing SMW/eLogin and ARM XC Nodes (Tutorial) & XC System Management Usability (BOF)"
+    venue: "Cray Users Group (CUG 2018)"
+    date_location: "May 2018 • Stockholm, Sweden"
+    links:
+      - label: "Tutorial Slides"
+        url: "https://cug.org/proceedings/cug2018_proceedings/includes/files/tut102s2-file1.pdf"
+      - label: "BOF Slides"
+        url: "https://cug.org/proceedings/cug2018_proceedings/includes/files/bof101s1-file1.pdf"
+
+patents:
+  - number: "U.S. Patent 12,473,234"
+    title: "Visual Communications"
+    assignee: "SoCoCo"
+    date: "Granted November 18, 2025"
+    url: "https://patents.google.com/patent/US12473234"
+    description: "Describes a web browser interface for visualizing real-time network communications within spatial virtual environments, allowing distributed participants to see user presence, room state, and active audio/video/data streams across virtual workspaces."
+  - number: "U.S. Patent 9,357,025"
+    title: "Virtual Area Based Telephony Communications"
+    assignee: "SoCoCo"
+    date: "Granted May 31, 2016"
+    url: "https://patents.google.com/patent/US9357025"
+    description: "Covers the system and methods behind Sococo's PSTN VoIP Gateway, enabling participants inside a spatial virtual office or conference room (\"virtual area\") to initiate, receive, and bridge real-world telephone calls directly into their active online collaboration session."
+  - number: "U.S. Patent 8,589,678"
+    title: "Managing Status and Access for a Variable Source Content Stream"
+    assignee: "Cisco Systems"
+    date: "Granted November 19, 2013"
+    url: "https://patents.google.com/patent/US8589678"
+    description: "Manages real-time participant status, permissions, and dynamic access control for multi-party, variable-source media and content streams across distributed IP communication sessions."
+  - number: "U.S. Patent 8,547,856"
+    title: "Communication System with State Dependent Parameters"
+    assignee: "Cisco Systems"
+    date: "Granted October 1, 2013"
+    url: "https://patents.google.com/patent/US8547856"
+    description: "A communication architecture developed for Cisco IPICS that dynamically adapts call routing, session configuration, and media parameters across heterogeneous networks—bridging disparate RF radio systems and IP/VoIP endpoints—based on real-time system and participant state."
+
+education:
+  - institution: "San Jose State University"
+    credential: "B.S. in Computer Science with a Math Minor"
+    meta: "Earned Summer 2009 • San Jose, CA"
+  - institution: "San Jose State University"
+    credential: "Unix System Administration Certificate"
+    meta: "San Jose, CA"
+    description: "Intensive coursework in UNIX/Linux operating system internals, multi-user system administration, shell scripting, file systems, process management, and TCP/IP network configuration—establishing the foundational systems engineering architecture behind three decades of commercial UNIX and Linux development."
+  - institution: "Scrum.org"
+    credential: "Professional Scrum Master Level I (PSM I)"
+    meta: "Certified Scrum Master"
+    link_label: "PDF Certificate"
+    link_url: "/files/Professional-Scrum-Master-I-Certificate.pdf"
+
+leadership:
+  - role: "Cubmaster & District Membership Chair"
+    org: "Scouting America • Pack 297 (Roseville, MN)"
+    details: "Active unit and district volunteer leadership and merit badge counselor."
+  - role: "Advanced Leadership Training (Wood Badge)"
+    org: "Scouting America"
+    details: "Trained (2017), Staff (2021)."
+    description: "Scouting America's premier national adult leadership program (Wood Badge) is an intensive, multi-day immersion in modern organizational leadership, team dynamics, and strategic execution. Grounded in proven management frameworks—including situational and servant leadership, Tuckman's stages of team development, active listening, conflict resolution, and leading organizational change—the curriculum translates theory into practice through an 18-month, five-part SMART-goal capstone project (\"Ticket\"). Invited back to serve on Course Staff (2021), mentoring and facilitating leadership development for incoming cohorts."
+
+interests:
+  - label: "Homelabbing"
+    text: "Building and operating a home multi-VLAN network for Linux virtualization, container orchestration, self-hosted services, and network experimentation."
+  - label: "Amateur Radio"
+    text: "Licensed Ham Radio Operator (KF6WOQ)."
+  - label: "Culinary Arts"
+    text: "Studied at l'École Ritz-Escoffier (Paris) and Tante Marie Cooking School (San Francisco)."
+  - label: "Maker & Explorer"
+    text: "Woodworking and international travel."
